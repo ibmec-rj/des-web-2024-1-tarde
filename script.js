@@ -33,7 +33,9 @@ const container = document.getElementById("conteudo");
 
 container.innerHTML = `
     <div class='card'>
-        <img src=${atleta.imagem} alt='foto de ${atleta.nome}'>
+        <div class='imagem'>
+            <img src=${atleta.imagem} alt='foto de ${atleta.nome}'>
+        </div>
         <p class='posicao'>${atleta.posicao}</p>
         <p class='nome'>${atleta.nome}</p>
         <p class='descri'>${atleta.descricao}</p>

@@ -7,10 +7,18 @@
     "a1 a3"
     "a4 a4"
     "a5 a5";
+    border: solid;
+    padding: .3rem;
 }
 
-.card > img {
+.card > div.imagem {
     grid-area: a1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
     width: 7rem;
     height: 7rem;
     border-radius: 50%;
@@ -24,6 +32,14 @@
 
 .card > p.nome {
     grid-area: a3;
+}
+
+.card > p.nome, .card > p.posicao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .card > p.descri {
