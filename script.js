@@ -26,3 +26,18 @@ console.log("Usando for...of", "------------------------------------------------
 for (const atleta of dados){
     console.log(`O nome completo de ${atleta.nome} é ${atleta.nome_completo}`);
 }
+
+const atleta = dados[15];
+
+const container = document.getElementById("conteudo");
+
+container.innerHTML = `
+    <div class='card'>
+        <img src=${atleta.imagem} alt='foto de ${atleta.nome}'>
+        <p class='posicao'>${atleta.posicao}</p>
+        <p class='nome'>${atleta.nome}</p>
+        <p class='descri'>${atleta.descricao}</p>
+        <p class='nascimento'>${atleta.nascimento}</p>
+    </div>
+`;
+
