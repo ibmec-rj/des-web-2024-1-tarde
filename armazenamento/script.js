@@ -19,7 +19,29 @@ document.body.appendChild(container);
 
 const handleClick = (evento) => {
     const dados = evento.target.closest('article').dataset;
-    console.log(dados);
+
+    for (const propriedade in dados){
+        //cookie
+        document.cookie = `${propriedade}=${dados[propriedade]}`;
+
+        //localStorage item por item
+        localStorage.setItem(propriedade, dados[propriedade]);
+
+        //localStora objeto
+        localStorage.setItem('atleta', JSON.stringify(dados))
+    }
+
+
+
+    window.location.href = `outra.html?elenco=${dados.elenco}&altura=${dados.altura}`;
+}
+
+const achaCookie = ( chave ) => {
+    const arrayCookies = document.cookie.split("; ");
+    const procurado = arrayCookies.find(
+        ( e ) => e.startsWith(`${chave}=`)
+    )
+    return procurado?.split('=')[1];
 }
 
 const montaCard = (entrada) => {
